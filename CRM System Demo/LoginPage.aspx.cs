@@ -15,10 +15,17 @@ namespace CRM_System_Demo
 
         }
 
-
-        protected void Login1_Authenticate1(object sender, AuthenticateEventArgs e)
+        protected void Button1_Click(object sender, EventArgs e)
         {
+            string log = null;         
+            HttpCookie l = new HttpCookie(log);
+            l.Value = TextBox1.Text.ToString();
 
+            string pas = null;
+            HttpCookie p = new HttpCookie(pas);
+            p.Value = TextBox2.Text.ToString();
+
+            
         }
     }
 }

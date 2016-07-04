@@ -30,9 +30,15 @@
 &nbsp;<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:Button ID="Button1" runat="server" Text="Button" />
+        <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
     
     </div>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRMBaseServer %>" SelectCommand="SELECT [login], [password] FROM [_user] WHERE (([login] = @login) AND ([password] = @password))">
+            <SelectParameters>
+                <asp:CookieParameter CookieName="login" Name="login" Type="String" />
+                <asp:CookieParameter CookieName="password" Name="password" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     </form>
 </body>
 </html>
