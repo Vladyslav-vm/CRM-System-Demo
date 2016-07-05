@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataCRM">
+  <DataContextMoniker Name="/DataCRMDataContext" />
+  <nestedChildShapes>
+    <classShape Id="42bce482-36b3-47e0-963e-13982b67e054" absoluteBounds="3.25, 0.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DataCRMDataContext/_user" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7cdd9c08-4d94-49a2-a264-152d469b5e12" absoluteBounds="3.265, 0.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="45f8bd4b-9f04-428f-a472-a9c8349bbab1" absoluteBounds="7.5, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataCRMDataContext/_product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22c0ce2a-0a2c-4737-819b-5f8ff206e398" absoluteBounds="7.515, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d4a6f8a-668e-4206-805e-803bcd89030e" absoluteBounds="1.5, 4, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/DataCRMDataContext/_operations_product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5054aa90-b45d-46e4-8ec4-8c752986f0e4" absoluteBounds="1.5149999999999997, 4.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8ae258c0-1fcb-4c15-a911-fe8f11d913a0" absoluteBounds="8, 4, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataCRMDataContext/_customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="424fe43c-251f-41a5-9a2a-3d52f6524933" absoluteBounds="8.015, 4.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4856739-f4a3-4b29-bbdb-005d662ba35d" absoluteBounds="4, 3.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/DataCRMDataContext/_contract" />
+      <nestedChildShapes>
+        <elementListCompartment Id="99ec4535-c200-4196-8efe-972dc7d8c9ad" absoluteBounds="4.015, 3.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

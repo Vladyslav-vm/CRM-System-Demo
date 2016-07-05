@@ -17,15 +17,17 @@ namespace CRM_System_Demo
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string log = null;         
-            HttpCookie l = new HttpCookie(log);
-            l.Value = TextBox1.Text.ToString();
 
-            string pas = null;
-            HttpCookie p = new HttpCookie(pas);
-            p.Value = TextBox2.Text.ToString();
-
-            
+            if (TextBox1.Text != "" & TextBox2.Text != "")
+            {
+                Response.BufferOutput = true;
+                Response.Redirect("index.aspx");
+            }
+            else
+            {
+                Label3.Text = "Something gone wrong!";
+                
+            }
         }
     }
 }
