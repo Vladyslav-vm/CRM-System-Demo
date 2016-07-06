@@ -13,6 +13,17 @@ namespace CRM_System_Demo
         {
 
         }
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            if (GridView1.SelectedRow != null)
+            {
+                DetailsView1.Visible = true;
+            }
+            else
+            {
+                DetailsView1.Visible = false;
+            }
+        }
 
         protected void main_Click(object sender, EventArgs e)
         {
@@ -42,6 +53,24 @@ namespace CRM_System_Demo
         {
             Response.BufferOutput = true;
             Response.Redirect("contracts.aspx");
+        }
+        protected void DetailsView1_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)
+        {
+            GridView1.DataBind();
+            GridView1.SelectRow(-1);
+        }
+
+        protected void DetailsView1_ItemDeleted(object sender, DetailsViewDeletedEventArgs e)
+        {
+            GridView1.DataBind();
+            GridView1.SelectRow(-1);
+        }
+
+        protected void DetailsView1_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
+        {
+            GridView1.DataBind();
+            GridView1.SelectRow(-1);
+
         }
     }
 }

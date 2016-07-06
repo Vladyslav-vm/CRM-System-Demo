@@ -17,13 +17,10 @@
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                 <asp:BoundField DataField="company" HeaderText="company" SortExpression="company" />
-                <asp:BoundField DataField="address" HeaderText="address" SortExpression="address" />
-                <asp:BoundField DataField="phonenumber" HeaderText="phonenumber" SortExpression="phonenumber" />
                 <asp:BoundField DataField="edrpou" HeaderText="edrpou" SortExpression="edrpou" />
-                <asp:BoundField DataField="inn" HeaderText="inn" SortExpression="inn" />
+                <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -36,7 +33,7 @@
             <SortedDescendingCellStyle BackColor="#FFFDF8" />
             <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
         </asp:GridView>
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" Height="50px" Width="125px">
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="50px" Width="125px" OnItemDeleted="DetailsView1_ItemDeleted" OnItemInserted="DetailsView1_ItemInserted" OnItemUpdated="DetailsView1_ItemUpdated">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <CommandRowStyle BackColor="#E2DED6" Font-Bold="True" />
             <EditRowStyle BackColor="#999999" />
@@ -48,7 +45,7 @@
                 <asp:BoundField DataField="phonenumber" HeaderText="phonenumber" SortExpression="phonenumber" />
                 <asp:BoundField DataField="edrpou" HeaderText="edrpou" SortExpression="edrpou" />
                 <asp:BoundField DataField="inn" HeaderText="inn" SortExpression="inn" />
-                <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+                <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
             </Fields>
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -56,14 +53,11 @@
             <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
         </asp:DetailsView>
     </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:CRMBaseConnectionString %>" DeleteCommand="DELETE FROM [_customer] WHERE [id] = @original_id AND [company] = @original_company AND [address] = @original_address AND [phonenumber] = @original_phonenumber AND [edrpou] = @original_edrpou AND [inn] = @original_inn" InsertCommand="INSERT INTO [_customer] ([company], [address], [phonenumber], [edrpou], [inn]) VALUES (@company, @address, @phonenumber, @edrpou, @inn)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [_customer] ORDER BY [id]" UpdateCommand="UPDATE [_customer] SET [company] = @company, [address] = @address, [phonenumber] = @phonenumber, [edrpou] = @edrpou, [inn] = @inn WHERE [id] = @original_id AND [company] = @original_company AND [address] = @original_address AND [phonenumber] = @original_phonenumber AND [edrpou] = @original_edrpou AND [inn] = @original_inn">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRMBaseConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [id], [company], [edrpou] FROM [_customer] ORDER BY [id]">
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CRMBaseConnectionString %>" DeleteCommand="DELETE FROM [_customer] WHERE [id] = @id" InsertCommand="INSERT INTO [_customer] ([company], [address], [phonenumber], [edrpou], [inn]) VALUES (@company, @address, @phonenumber, @edrpou, @inn)" SelectCommand="SELECT * FROM [_customer] WHERE ([id] = @id)" UpdateCommand="UPDATE [_customer] SET [company] = @company, [address] = @address, [phonenumber] = @phonenumber, [edrpou] = @edrpou, [inn] = @inn WHERE [id] = @id">
             <DeleteParameters>
-                <asp:Parameter Name="original_id" Type="Int32" />
-                <asp:Parameter Name="original_company" Type="String" />
-                <asp:Parameter Name="original_address" Type="String" />
-                <asp:Parameter Name="original_phonenumber" Type="Int32" />
-                <asp:Parameter Name="original_edrpou" Type="Int32" />
-                <asp:Parameter Name="original_inn" Type="Int32" />
+                <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
                 <asp:Parameter Name="company" Type="String" />
@@ -72,18 +66,16 @@
                 <asp:Parameter Name="edrpou" Type="Int32" />
                 <asp:Parameter Name="inn" Type="Int32" />
             </InsertParameters>
+            <SelectParameters>
+                <asp:ControlParameter ControlID="GridView1" Name="id" PropertyName="SelectedValue" Type="Int32" />
+            </SelectParameters>
             <UpdateParameters>
                 <asp:Parameter Name="company" Type="String" />
                 <asp:Parameter Name="address" Type="String" />
                 <asp:Parameter Name="phonenumber" Type="Int32" />
                 <asp:Parameter Name="edrpou" Type="Int32" />
                 <asp:Parameter Name="inn" Type="Int32" />
-                <asp:Parameter Name="original_id" Type="Int32" />
-                <asp:Parameter Name="original_company" Type="String" />
-                <asp:Parameter Name="original_address" Type="String" />
-                <asp:Parameter Name="original_phonenumber" Type="Int32" />
-                <asp:Parameter Name="original_edrpou" Type="Int32" />
-                <asp:Parameter Name="original_inn" Type="Int32" />
+                <asp:Parameter Name="id" Type="Int32" />
             </UpdateParameters>
         </asp:SqlDataSource>
     </form>
