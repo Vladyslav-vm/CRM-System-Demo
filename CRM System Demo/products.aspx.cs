@@ -7,14 +7,13 @@ using System.Web.UI.WebControls;
 
 namespace CRM_System_Demo
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class products : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = "Приветствую, ";
-
 
         }
+
         protected void main_Click(object sender, EventArgs e)
         {
             Response.BufferOutput = true;

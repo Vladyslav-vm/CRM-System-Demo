@@ -10,7 +10,7 @@
 namespace CRM_System_Demo {
     
     
-    public partial class WebForm1 {
+    public partial class customers {
         
         /// <summary>
         /// form1 control.
@@ -65,15 +65,6 @@ namespace CRM_System_Demo {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button contract;
-        
-        /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// GridView1 control.
