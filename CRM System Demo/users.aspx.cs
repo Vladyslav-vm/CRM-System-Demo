@@ -22,6 +22,7 @@ namespace CRM_System_Demo
             else
             {
                 DetailsView1.Visible = false;
+
             }
         }
 
