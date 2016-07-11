@@ -55,6 +55,11 @@ namespace CRM_System_Demo
             Response.BufferOutput = true;
             Response.Redirect("contracts.aspx");
         }
+        protected void report_Click(object sender, EventArgs e)
+        {
+            Response.BufferOutput = true;
+            Response.Redirect("reports.aspx");
+        }
         protected void DetailsView1_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)
         {
             GridView1.DataBind();

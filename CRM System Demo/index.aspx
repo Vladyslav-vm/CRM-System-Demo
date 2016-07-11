@@ -15,6 +15,7 @@
         <asp:Button ID="product" runat="server" Text="Products" OnClick="product_Click" />
         <asp:Button ID="customer" runat="server" Text="Customers" OnClick="customer_Click" />
         <asp:Button ID="contract" runat="server" Text="Contracts" OnClick="contract_Click" />
+            <asp:Button ID="report" runat="server" Text="Reports" />
         </div>
 
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
@@ -25,7 +26,7 @@
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                <asp:BoundField DataField="operation_date" HeaderText="operation_date" SortExpression="operation_date" />
+                <asp:BoundField DataField="operation_date" HeaderText="operation_date" SortExpression="operation_date" DataFormatString="{0:dd.MM.yyyy}" />
                 <asp:BoundField DataField="operation_type" HeaderText="operation_type" SortExpression="operation_type" />
                 <asp:BoundField DataField="operation_price" HeaderText="operation_price" SortExpression="operation_price" />
                 <asp:CommandField ShowSelectButton="True" ButtonType="Button" />
@@ -48,7 +49,7 @@
             <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True" />
             <Fields>
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                <asp:BoundField DataField="operation_date" HeaderText="operation_date" SortExpression="operation_date" />
+                <asp:BoundField DataField="operation_date" HeaderText="operation_date" SortExpression="operation_date"  DataFormatString="{0:dd.MM.yyyy}"/>
                 <asp:BoundField DataField="operation_type" HeaderText="operation_type" SortExpression="operation_type" />
                 <asp:BoundField DataField="operation_price" HeaderText="operation_price" SortExpression="operation_price" />
                 <asp:BoundField DataField="id_user" HeaderText="id_user" SortExpression="id_user" />
@@ -88,6 +89,8 @@
         </asp:SqlDataSource>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRMBaseConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [_operations_product] ORDER BY [operation_date]">
         </asp:SqlDataSource>
+        <br />
+        <br />
     </form>
     </body>
 </html>

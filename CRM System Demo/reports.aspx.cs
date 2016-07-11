@@ -7,25 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace CRM_System_Demo
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class WebForm2 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = "Приветствую, ";
-
+            Calendar1.Visible = false;
+            Calendar2.Visible = false;
         }
 
-        protected void Page_PreRender(object sender, EventArgs e)
-        {
-            if (GridView1.SelectedRow != null)
-            {
-                DetailsView1.Visible = true;
-            }
-            else
-            {
-                DetailsView1.Visible = false;
-            }
-        }
         protected void main_Click(object sender, EventArgs e)
         {
             Response.BufferOutput = true;
@@ -55,29 +44,34 @@ namespace CRM_System_Demo
             Response.BufferOutput = true;
             Response.Redirect("contracts.aspx");
         }
+
         protected void report_Click(object sender, EventArgs e)
         {
             Response.BufferOutput = true;
             Response.Redirect("reports.aspx");
         }
 
-        protected void DetailsView1_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)
+
+        protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
-            GridView1.DataBind();
-            GridView1.SelectRow(-1);
+            fromDate.Text = Calendar1.SelectedDate.ToString("dd.MM.yyyy");
+            Calendar1.Visible = false;
         }
 
-        protected void DetailsView1_ItemDeleted(object sender, DetailsViewDeletedEventArgs e)
+        protected void calend1_Click(object sender, EventArgs e)
         {
-            GridView1.DataBind();
-            GridView1.SelectRow(-1);
+            Calendar1.Visible = true;
         }
 
-        protected void DetailsView1_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
+        protected void calen2_Click(object sender, EventArgs e)
         {
-            GridView1.DataBind();
-            GridView1.SelectRow(-1);
+            Calendar2.Visible = true;
+        }
 
+        protected void Calendar2_SelectionChanged(object sender, EventArgs e)
+        {
+            toDate.Text = Calendar2.SelectedDate.ToString("dd.MM.yyyy");
+            Calendar2.Visible = false;
         }
     }
 }

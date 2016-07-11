@@ -16,6 +16,8 @@
         <asp:Button ID="customer" runat="server" OnClick="customer_Click" Text="Customers" />
         <asp:Button ID="contract" runat="server" OnClick="contract_Click" Text="Contracts" />
     
+        <asp:Button ID="report" runat="server" OnClick="report_Click" Text="Reports" />
+    
     </div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />

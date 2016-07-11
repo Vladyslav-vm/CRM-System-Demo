@@ -14,13 +14,14 @@
         <asp:Button ID="product" runat="server" Text="Products" OnClick="product_Click" />
         <asp:Button ID="customer" runat="server" Text="Customers" OnClick="customer_Click" />
         <asp:Button ID="contract" runat="server" Text="Contracts" OnClick="contract_Click" />
+        <asp:Button ID="report" runat="server" OnClick="report_Click" Text="Reports" />
     </div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                 <asp:BoundField DataField="contract_type" HeaderText="contract_type" SortExpression="contract_type" />
-                <asp:BoundField DataField="date_conclusion" HeaderText="date_conclusion" SortExpression="date_conclusion" />
+                <asp:BoundField DataField="date_conclusion" HeaderText="date_conclusion" SortExpression="date_conclusion" DataFormatString="{0:dd.MM.yyyy}"/>
                 <asp:BoundField DataField="total_price" HeaderText="total_price" SortExpression="total_price" />
                 <asp:BoundField DataField="contract_balance" HeaderText="contract_balance" SortExpression="contract_balance" />
                 <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
@@ -43,10 +44,10 @@
             <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True" />
             <Fields>
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                <asp:BoundField DataField="date_conclusion" HeaderText="date_conclusion" SortExpression="date_conclusion" />
+                <asp:BoundField DataField="date_conclusion" HeaderText="date_conclusion" SortExpression="date_conclusion" DataFormatString="{0:dd.MM.yyyy}" />
                 <asp:BoundField DataField="total_price" HeaderText="total_price" SortExpression="total_price" />
                 <asp:BoundField DataField="contract_balance" HeaderText="contract_balance" SortExpression="contract_balance" />
-                <asp:BoundField DataField="date_end" HeaderText="date_end" SortExpression="date_end" />
+                <asp:BoundField DataField="date_end" HeaderText="date_end" SortExpression="date_end" DataFormatString="{0:dd.MM.yyyy}"/>
                 <asp:BoundField DataField="id_customer" HeaderText="id_customer" SortExpression="id_customer" />
                 <asp:BoundField DataField="contract_type" HeaderText="contract_type" SortExpression="contract_type" />
                 <asp:BoundField DataField="id_product" HeaderText="id_product" SortExpression="id_product" />
@@ -54,7 +55,7 @@
             </Fields>
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+            <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" /> 
             <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
         </asp:DetailsView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRMBaseConnectionString %>" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT [id], [date_conclusion], [total_price], [contract_balance], [contract_type] FROM [_contract] ORDER BY [id]">

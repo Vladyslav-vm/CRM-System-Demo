@@ -16,12 +16,14 @@
         <asp:Button ID="customer" runat="server" Text="Customers" OnClick="customer_Click" />
         <asp:Button ID="contract" runat="server" Text="Contracts" OnClick="contract_Click" />
     
+        <asp:Button ID="report" runat="server" OnClick="report_Click" Text="Reports" />
+    
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                 <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
-                <asp:BoundField DataField="date_add" HeaderText="date_add" SortExpression="date_add" />
+                <asp:BoundField DataField="date_add" HeaderText="date_add" SortExpression="date_add" DataFormatString="{0:dd.MM.yyyy}" />
                 <asp:CommandField ButtonType="Button" ShowSelectButton="True" />
             </Columns>
             <EditRowStyle BackColor="#999999" />
@@ -45,7 +47,7 @@
                 <asp:BoundField DataField="name" HeaderText="name" SortExpression="name" />
                 <asp:BoundField DataField="price_buy" HeaderText="price_buy" SortExpression="price_buy" />
                 <asp:BoundField DataField="price_sell" HeaderText="price_sell" SortExpression="price_sell" />
-                <asp:BoundField DataField="date_add" HeaderText="date_add" SortExpression="date_add" />
+                <asp:BoundField DataField="date_add" HeaderText="date_add" SortExpression="date_add" DataFormatString="{0:dd.MM.yyyy}" />
                 <asp:BoundField DataField="id_user" HeaderText="id_user" SortExpression="id_user" />
                 <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
             </Fields>
