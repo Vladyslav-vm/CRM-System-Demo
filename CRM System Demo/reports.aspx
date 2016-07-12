@@ -25,7 +25,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="toDate" runat="server"></asp:TextBox>
         <asp:Button ID="calen2" runat="server" Width="28px" OnClick="calen2_Click" />
-        <asp:Button ID="Button1" runat="server" Text="Confirm" />
+        <asp:Button ID="Button1" runat="server" Text="Confirm" OnClick="Button1_Click" />
         <div>
         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" OnSelectionChanged="Calendar1_SelectionChanged" Width="200px">
             <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
@@ -49,7 +49,7 @@
         </asp:Calendar>
             </div>
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" SizeToReportContent="True">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" SizeToReportContent="True" OnDrillthrough="ReportViewer1_Drillthrough">
             <LocalReport ReportPath="Report1.rdlc">
                 <DataSources>
                     <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
