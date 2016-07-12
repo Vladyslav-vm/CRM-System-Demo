@@ -26,8 +26,8 @@
 &nbsp;<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-&nbsp;<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+        <asp:Label ID="Label2" runat="server"  Text="Password"></asp:Label>
+&nbsp;<asp:TextBox ID="TextBox2" TextMode="Password" runat="server"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
