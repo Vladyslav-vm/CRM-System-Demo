@@ -91,6 +91,17 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="reports.aspx" />
+    <Content Include="CRMBaseDataSet.xsc">
+      <DependentUpon>CRMBaseDataSet.xsd</DependentUpon>
+    </Content>
+    <None Include="CRMBaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CRMBaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="CRMBaseDataSet.xss">
+      <DependentUpon>CRMBaseDataSet.xsd</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -119,6 +130,11 @@
     </Compile>
     <Compile Include="contracts.aspx.designer.cs">
       <DependentUpon>contracts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CRMBaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRMBaseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="customers.aspx.cs">
       <DependentUpon>customers.aspx</DependentUpon>
@@ -180,6 +196,9 @@
     <None Include="DataCRM.dbml.layout">
       <DependentUpon>DataCRM.dbml</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Report1.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

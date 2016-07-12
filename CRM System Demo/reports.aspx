@@ -1,5 +1,7 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="reports.aspx.cs" Inherits="CRM_System_Demo.WebForm2" %>
 
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -46,6 +48,36 @@
             <WeekendDayStyle BackColor="#FFFFCC" />
         </asp:Calendar>
             </div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" SizeToReportContent="True">
+            <LocalReport ReportPath="Report1.rdlc">
+                <DataSources>
+                    <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                </DataSources>
+            </LocalReport>
+        </rsweb:ReportViewer>
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="GetData" TypeName="CRM_System_Demo.CRMBaseDataSetTableAdapters._operations_productTableAdapter" DeleteMethod="Delete" InsertMethod="Insert" OldValuesParameterFormatString="original_{0}" UpdateMethod="Update">
+            <DeleteParameters>
+                <asp:Parameter Name="Original_id" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="operation_date" Type="DateTime" />
+                <asp:Parameter Name="operation_type" Type="String" />
+                <asp:Parameter Name="operation_price" Type="Decimal" />
+                <asp:Parameter Name="id_user" Type="Int32" />
+                <asp:Parameter Name="id_customer" Type="Int32" />
+                <asp:Parameter Name="id_contract" Type="Int32" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="operation_date" Type="DateTime" />
+                <asp:Parameter Name="operation_type" Type="String" />
+                <asp:Parameter Name="operation_price" Type="Decimal" />
+                <asp:Parameter Name="id_user" Type="Int32" />
+                <asp:Parameter Name="id_customer" Type="Int32" />
+                <asp:Parameter Name="id_contract" Type="Int32" />
+                <asp:Parameter Name="Original_id" Type="Int32" />
+            </UpdateParameters>
+        </asp:ObjectDataSource>
     </form>
 </body>
 </html>
