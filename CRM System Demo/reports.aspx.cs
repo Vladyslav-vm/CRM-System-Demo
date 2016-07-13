@@ -13,8 +13,8 @@ namespace CRM_System_Demo
     public partial class WebForm2 : System.Web.UI.Page
     {
 
-        string date1;
-        string date2;
+        string date1 = null;
+        string date2 = null;
         protected void Page_Load(object sender, EventArgs e)
         {
             Calendar1.Visible = false;
@@ -92,7 +92,7 @@ namespace CRM_System_Demo
                 CRMBaseDataSet ds = new CRMBaseDataSet();
 
                 //Create a SQL Connection to the AdventureWorks2008 database using Windows Authentication.
-                using (SqlConnection sqlconn = new SqlConnection("Data Source=MSSQLFULL;Initial Catalog=CRMBase;Integrated Security=True"))
+                using (SqlConnection sqlconn = new SqlConnection("Data Source=.;Initial Catalog=CRMBase;Integrated Security=True"))
                 {
                     //Building the dynamic query with the parameter ProductID.
                     SqlDataAdapter adap = new SqlDataAdapter("SELECT id, operation_date, operation_price FROM _operations_product where operation_date BETWEEN '" + date1 + "' AND '" + date2 + "'", sqlconn);
@@ -111,7 +111,7 @@ namespace CRM_System_Demo
 
         protected void ReportViewer1_Drillthrough(object sender, Microsoft.Reporting.WebForms.DrillthroughEventArgs e)
         {
-            ReportViewer1.Visible = true;
+            //ReportViewer1.Visible = true;
             try
             {
                 //Variable to store the parameter value passed from the MainReport.
@@ -137,7 +137,7 @@ namespace CRM_System_Demo
                 //The name DataSet1 which can be located from, 
                 //Go to Design view of Child.rdlc, Click View menu -> Report Data
                 //You'll see this name under DataSet2.
-                report.DataSources.Add(new ReportDataSource("DataSet1", GetByDate(date1, date2)));
+                report.DataSources.Add(new ReportDataSource("Report1", GetByDate(date1, date2)));
             }
             catch (Exception ex)
             {
@@ -149,7 +149,8 @@ namespace CRM_System_Demo
         {
             date1 = fromDate.Text;
             date2 = toDate.Text;
-
+            //problem with connection to SQL 
+            //GetByDate(date1, date2);
         }
     }
 }

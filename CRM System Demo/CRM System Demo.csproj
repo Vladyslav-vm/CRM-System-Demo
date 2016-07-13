@@ -131,6 +131,9 @@
     <Compile Include="contracts.aspx.designer.cs">
       <DependentUpon>contracts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CRMBaseDataSet.cs">
+      <DependentUpon>CRMBaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CRMBaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
