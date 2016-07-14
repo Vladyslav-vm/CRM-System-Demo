@@ -7,25 +7,39 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-    
-            <asp:Button ID="main" runat="server" Text="Main" OnClick="main_Click" />
-        <asp:Button ID="user" runat="server" Text="Users" OnClick="user_Click" />
-        <asp:Button ID="product" runat="server" Text="Products" OnClick="product_Click" />
-        <asp:Button ID="customer" runat="server" Text="Customers" OnClick="customer_Click" />
-        <asp:Button ID="contract" runat="server" Text="Contracts" OnClick="contract_Click" />
-        <asp:Button ID="report" runat="server" OnClick="report_Click" Text="Reports" />
-    
+        
+         <div class="col-md-2">
+            <asp:Button ID="main" runat="server" class="btn btn-default btn-lg btn-block" Text="Main" OnClick="main_Click" />
+         </div>
+         <div class="col-md-2">
+            <asp:Button ID="user" runat="server" class="btn btn-default btn-lg btn-block" Text="Users" OnClick="user_Click" />
+         </div>
+         <div class="col-md-2">
+            <asp:Button ID="product" runat="server" class="btn btn-default btn-lg btn-block" Text="Products" OnClick="product_Click" />
+         </div>
+         <div class="col-md-2">
+            <asp:Button ID="customer" runat="server" class="btn btn-default btn-lg btn-block" Text="Customers" OnClick="customer_Click" />
+         </div>
+         <div class="col-md-2">
+            <asp:Button ID="contract" runat="server" class="btn btn-default btn-lg btn-block" Text="Contracts" OnClick="contract_Click" />
+         </div>
+         <div class="col-md-2">
+            <asp:Button ID="report" runat="server" class="btn btn-default btn-lg btn-block" OnClick="report_Click" Text="Reports" />
+             </div>
     </div>
-        <asp:TextBox ID="fromDate" runat="server"></asp:TextBox>
-        <asp:Button ID="calend1" runat="server" Width="27px" OnClick="calend1_Click" />
+         <div class="col-md-6">
+            <asp:TextBox ID="fromDate" runat="server"></asp:TextBox>
+            <asp:Button ID="calend1" runat="server" Width="27px" OnClick="calend1_Click" />
+          </div>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="toDate" runat="server"></asp:TextBox>
         <asp:Button ID="calen2" runat="server" Width="28px" OnClick="calen2_Click" />
-        <asp:Button ID="Button1" runat="server" Text="Confirm" OnClick="Button1_Click" />
+        <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Confirm" OnClick="Button1_Click" />
         <div>
         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" OnSelectionChanged="Calendar1_SelectionChanged" Width="200px">
             <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />

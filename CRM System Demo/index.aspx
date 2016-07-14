@@ -5,19 +5,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
 
         <div>
-            <asp:Button ID="main" runat="server" Text="Main" OnClick="main_Click" />
-        <asp:Button ID="user" runat="server" Text="Users" OnClick="user_Click" />
-        <asp:Button ID="product" runat="server" Text="Products" OnClick="product_Click" />
-        <asp:Button ID="customer" runat="server" Text="Customers" OnClick="customer_Click" />
-        <asp:Button ID="contract" runat="server" Text="Contracts" OnClick="contract_Click" />
-            <asp:Button ID="report" runat="server" Text="Reports" />
+            
+        <div class="col-md-2">
+            <asp:Button ID="main" runat="server" class="btn btn-default btn-lg btn-block" Text="Main" OnClick="main_Click" />
         </div>
-
+        <div class="col-md-2">
+            <asp:Button ID="user" runat="server" class="btn btn-default btn-lg btn-block" Text="Users" OnClick="user_Click" />
+        </div>
+        <div class="col-md-2">
+            <asp:Button ID="product" runat="server" class="btn btn-default btn-lg btn-block" Text="Products" OnClick="product_Click" />
+        </div>
+        <div class="col-md-2">
+            <asp:Button ID="customer" runat="server" class="btn btn-default btn-lg btn-block" Text="Customers" OnClick="customer_Click" />
+        </div>
+        <div class="col-md-2">
+            <asp:Button ID="contract" runat="server" class="btn btn-default btn-lg btn-block" Text="Contracts" OnClick="contract_Click" />
+        </div>
+        <div class="col-md-2">
+            <asp:Button ID="report" runat="server" class="btn btn-default btn-lg btn-block" Text="Reports" />
+        </div>
+    </div>
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
         <br />
         <br />

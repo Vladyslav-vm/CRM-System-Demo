@@ -5,19 +5,30 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-    
-        <asp:Button ID="main" runat="server" OnClick="main_Click" Text="Main" />
-        <asp:Button ID="user" runat="server" OnClick="user_Click" Text="Users" />
-        <asp:Button ID="product" runat="server" OnClick="product_Click" Text="Products" />
-        <asp:Button ID="customer" runat="server" OnClick="customer_Click" Text="Customers" />
-        <asp:Button ID="contract" runat="server" OnClick="contract_Click" Text="Contracts" />
-    
-        <asp:Button ID="report" runat="server" OnClick="report_Click" Text="Reports" />
-    
+        <div class="col-md-2">
+            <asp:Button ID="main" runat="server" class="btn btn-default btn-lg btn-block" OnClick="main_Click" Text="Main" />
+         </div>
+        <div class="col-md-2">
+            <asp:Button ID="user" runat="server" class="btn btn-default btn-lg btn-block" OnClick="user_Click" Text="Users" />
+         </div>
+        <div class="col-md-2">
+            <asp:Button ID="product" runat="server" class="btn btn-default btn-lg btn-block" OnClick="product_Click" Text="Products" />
+         </div>
+        <div class="col-md-2">
+            <asp:Button ID="customer" runat="server" class="btn btn-default btn-lg btn-block" OnClick="customer_Click" Text="Customers" />
+         </div>
+        <div class="col-md-2">
+            <asp:Button ID="contract" runat="server" class="btn btn-default btn-lg btn-block" OnClick="contract_Click" Text="Contracts" />
+        </div>
+        <div class="col-md-2">
+            <asp:Button ID="report" runat="server" class="btn btn-default btn-lg btn-block" OnClick="report_Click" Text="Reports" />
+         </div>
+
     </div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />

@@ -5,20 +5,54 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+
+        table, .table {
+        
+            width: 300px;
+            margin: 20px auto;
+            
+        }
+
+    </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-    <asp:Button ID="main" runat="server" Text="Main" OnClick="main_Click" />
-        <asp:Button ID="user" runat="server" Text="Users" OnClick="user_Click" />
-        <asp:Button ID="product" runat="server" Text="Products" OnClick="product_Click" />
-        <asp:Button ID="customer" runat="server" Text="Customers" OnClick="customer_Click" />
-        <asp:Button ID="contract" runat="server" Text="Contracts" OnClick="contract_Click" />
-        <asp:Button ID="report" runat="server" OnClick="report_Click" Text="Reports" />
-    </div>
+        <div class="col-md-2">
+            <asp:Button ID="main" runat="server" class="btn btn-default btn-lg btn-block" Text="Main" OnClick="main_Click" />
+        </div>
+        <div class="col-md-2">
+            <asp:Button ID="user" runat="server" class="btn btn-default btn-lg btn-block" Text="Users" OnClick="user_Click" />
+        </div>
+        <div class="col-md-2">    
+        <asp:Button ID="product" runat="server" class="btn btn-default btn-lg btn-block" Text="Products" OnClick="product_Click" />
+        </div>
+        <div class="col-md-2">
+            <asp:Button ID="customer" runat="server" class="btn btn-default btn-lg btn-block" Text="Customers" OnClick="customer_Click" />
+        </div>
+        <div class="col-md-2">
+            <asp:Button ID="contract" runat="server" class="btn btn-default btn-lg btn-block" Text="Contracts" OnClick="contract_Click" />
+        </div>    
+        <div class="col-md-2">
+            <asp:Button ID="report" runat="server" class="btn btn-default btn-lg btn-block" OnClick="report_Click" Text="Reports" />
+        </div>
+
+        
+      </div>
+
+
+        <br />
+
+
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None" AllowSorting="True">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+            
             <Columns>
+                
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                 <asp:BoundField DataField="contract_type" HeaderText="contract_type" SortExpression="contract_type" />
                 <asp:BoundField DataField="date_conclusion" HeaderText="date_conclusion" SortExpression="date_conclusion" DataFormatString="{0:dd.MM.yyyy}"/>
@@ -42,6 +76,8 @@
             <CommandRowStyle BackColor="#E2DED6" Font-Bold="True" />
             <EditRowStyle BackColor="#999999" />
             <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True" />
+            
+            
             <Fields>
                 <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                 <asp:BoundField DataField="date_conclusion" HeaderText="date_conclusion" SortExpression="date_conclusion" DataFormatString="{0:dd.MM.yyyy}" />
@@ -53,6 +89,7 @@
                 <asp:BoundField DataField="id_product" HeaderText="id_product" SortExpression="id_product" />
                 <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
             </Fields>
+                
             <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
             <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" /> 
