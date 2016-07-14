@@ -33,14 +33,14 @@
         <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
         <br />
         <br />
-    <asp:Label ID="Label3" runat="server" text="Sign in" style="text-align: center"></asp:Label>
-    </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRMBaseServer %>" SelectCommand="SELECT [id] FROM [_user] WHERE (([login] = @login) AND ([password] = @password))">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRMBaseConnectionString %>" SelectCommand="SELECT [login], [password] FROM [_user] WHERE (([login] = @login) AND ([password] = @password))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="TextBox1" Name="login" PropertyName="Text" Type="String" />
                 <asp:ControlParameter ControlID="TextBox2" Name="password" PropertyName="Text" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
+    <asp:Label ID="Label3" runat="server" text="Sign in" style="text-align: center"></asp:Label>
+    </div>
     </form>
 </body>
 </html>
