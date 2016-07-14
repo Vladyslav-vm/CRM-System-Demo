@@ -38,7 +38,7 @@
          <asp:Button ID="Button1" runat="server" type="submit" class="btn btn-default" Text="Sign in" OnClick="Button1_Click"/>
          <asp:Label for="Button1" runat="server" ID="Label3"></asp:Label>
             </div>
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRMBaseConnectionString %>" SelectCommand="SELECT [id] FROM [_user] WHERE (([login] = @login) AND ([password] = @password))">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRMBaseConnectionString %>" SelectCommand="SELECT [name_and_surname] FROM [_user] WHERE (([login] = @login) AND ([password] = @password))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="TextBox1" Name="login" PropertyName="Text" Type="String" />
                 <asp:ControlParameter ControlID="TextBox2" Name="password" PropertyName="Text" Type="String" />

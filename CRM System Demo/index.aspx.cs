@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -11,7 +12,32 @@ namespace CRM_System_Demo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Label1.Text = "Приветствую, ";
+            HttpCookie name = Request.Cookies["name"];
+            HttpCookie sign = Request.Cookies["sign"];
+            HttpCookie time = Request.Cookies["time"];
+
+            if (name != null && sign != null)
+            {
+                //string temp = time.Value;
+                string tempSign = Convert.ToString(time.Value.GetHashCode());
+
+                // Если полученная подпись правильная прекращаем дальнейшую обработку события Load
+                // и переходим к следующим этапам жизненного цикла страницы.
+                if (sign.Value == tempSign)
+                {
+                    Label1.Text = "Приветствую, " + name.Value;
+                    return;
+                }
+                else
+                {
+                    Response.Redirect("LoginPage.aspx");
+                }
+            }
+
+            Response.Redirect("LoginPage.aspx");
+
+
+
 
         }
 
@@ -79,5 +105,12 @@ namespace CRM_System_Demo
             GridView1.SelectRow(-1);
 
         }
+        //protected string GenSalt(int length)
+        //{
+        //    RNGCryptoServiceProvider p = new RNGCryptoServiceProvider();
+        //    var salt = new byte[length];
+        //    p.GetBytes(salt);
+        //    return Convert.ToBase64String(salt);
+        //}
     }
 }
