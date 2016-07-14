@@ -36,7 +36,7 @@
             </div>
          <div class="form-group">
          <asp:Button ID="Button1" runat="server" type="submit" class="btn btn-default" Text="Sign in" OnClick="Button1_Click"/>
-         <asp:Label for="Button1" runat="server"></asp:Label>
+         <asp:Label for="Button1" runat="server" ID="Label3"></asp:Label>
             </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRMBaseConnectionString %>" SelectCommand="SELECT [id] FROM [_user] WHERE (([login] = @login) AND ([password] = @password))">
             <SelectParameters>

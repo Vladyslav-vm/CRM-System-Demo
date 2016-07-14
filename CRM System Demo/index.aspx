@@ -38,8 +38,8 @@
         <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="id" CellPadding="4" ForeColor="#333333" GridLines="None">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:BoundField DataField="id" HeaderText="id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
-                <asp:BoundField DataField="operation_date" HeaderText="operation_date" SortExpression="operation_date" DataFormatString="{0:dd.MM.yyyy}" />
+                <asp:BoundField DataField="id" HeaderText="№" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                <asp:BoundField DataField="operation_date" HeaderText="Дата создания" SortExpression="operation_date" DataFormatString="{0:dd.MM.yyyy}" />
                 <asp:BoundField DataField="operation_type" HeaderText="operation_type" SortExpression="operation_type" />
                 <asp:BoundField DataField="operation_price" HeaderText="operation_price" SortExpression="operation_price" />
                 <asp:CommandField ShowSelectButton="True" ButtonType="Button" />

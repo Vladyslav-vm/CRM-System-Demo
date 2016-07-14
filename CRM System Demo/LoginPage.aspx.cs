@@ -20,15 +20,22 @@ namespace CRM_System_Demo
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            if (TextBox1.Text != "" & TextBox2.Text != "" & ReadMyData() == true)
+            if (TextBox1.Text != "" & TextBox2.Text != "")
             {
-                Response.BufferOutput = true;
-                Response.Redirect("index.aspx");
+                if (ReadMyData() == true)
+                {
+                    Response.BufferOutput = true;
+                    Response.Redirect("index.aspx");
+                }
+                else
+                {
+                    Label3.Text = "Wrong login or password!";
+                }
             }
             else
             {
-                Label3.Text = "Something gone wrong!";
-                
+                Label3.Text = "Enter login and password!";
+
             }
         }
 
