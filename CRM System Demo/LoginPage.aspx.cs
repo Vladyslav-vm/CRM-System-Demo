@@ -34,16 +34,19 @@ namespace CRM_System_Demo
                     HttpCookie cookieName = new HttpCookie("name", nameAndSurname());
                     HttpCookie cookieSign = new HttpCookie("sign", Convert.ToString(salt));
                     HttpCookie cookieTime = new HttpCookie("time", dt);
-                    // Для того, что бы гарантировать, что данный cookie-набор был создан нашей странице, а не злоумышленником,
-                    // в ответ кроме имени мы отправляем cookie-набор подпись.
-                    // Для того, что бы усложнить подбор значения, которое мы поместили в подпись используется "соль" - слово или 
-                    // набор символов.
-                    // Каждый раз когда от пользователя будут приходить запросы, мы будем повторно генерировать подпись и проверять,
-                    // что бы она совпадала с полученой.
-
+                    //// Для того, что бы гарантировать, что данный cookie-набор был создан нашей странице, а не злоумышленником,
+                    //// в ответ кроме имени мы отправляем cookie-набор подпись.
+                    //// Для того, что бы усложнить подбор значения, которое мы поместили в подпись используется "соль" - слово или 
+                    //// набор символов.
+                    //// Каждый раз когда от пользователя будут приходить запросы, мы будем повторно генерировать подпись и проверять,
+                    //// что бы она совпадала с полученой.
+                    cookieSign.Expires = date.AddMinutes(5);
                     Response.Cookies.Add(cookieName);
                     Response.Cookies.Add(cookieSign);
                     Response.Cookies.Add(cookieTime);
+                    //Auth auth = new Auth();
+                    //auth.AuthenPush(nameAndSurname());
+
 
                     Response.BufferOutput = true;
                     Response.Redirect("index.aspx");
@@ -67,19 +70,12 @@ namespace CRM_System_Demo
         }
         protected bool ReadMyData()
         {
-            //string myConnectionString = "Database=CRMBase; Server=MSSQLFULL; Integrated Security=True"; //"Data Source = MSSQLFULL; Initial Catalog = CRMBase;";
-            //string mySelectQuery = "SELECT login, password FROM _user WHERE login ='" + TextBox1.Text + "' AND password = '" + TextBox2.Text + "'";
-            //SqlConnection myConnection = new SqlConnection(myConnectionString);
-            //SqlCommand myCommand = new SqlCommand(mySelectQuery, myConnection);
-            ////problems with connection
-            //myConnection.Open();
-            //SqlDataReader myReader = myCommand.ExecuteReader();
+           
             bool b = false;
-            //string str = myReader[0].ToString();
-            //string str1 = myReader[1].ToString();
+            
             DataView dv = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
             int reorderedProducts = dv.Table.Rows.Count;
-            //nameAndSurname = dv.Table.Rows[0].ItemArray.GetValue(0).ToString();
+            
             if (reorderedProducts == 1)
                     {
                         
@@ -87,9 +83,10 @@ namespace CRM_System_Demo
                      
                     }
 
-              
             return b;
         }
+
+
        //protected string GenSalt(string tm)
        // {
        //     //RNGCryptoServiceProvider p = new RNGCryptoServiceProvider();

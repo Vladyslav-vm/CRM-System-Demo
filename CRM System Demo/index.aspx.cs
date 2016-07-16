@@ -12,13 +12,14 @@ namespace CRM_System_Demo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Auth auth = new Auth();
             HttpCookie name = Request.Cookies["name"];
             HttpCookie sign = Request.Cookies["sign"];
             HttpCookie time = Request.Cookies["time"];
-
+            //sign.Expires = DateTime.Now.AddMinutes(5);
             if (name != null && sign != null)
             {
-                //string temp = time.Value;
+                string temp = time.Value;
                 string tempSign = Convert.ToString(time.Value.GetHashCode());
 
                 // Если полученная подпись правильная прекращаем дальнейшую обработку события Load

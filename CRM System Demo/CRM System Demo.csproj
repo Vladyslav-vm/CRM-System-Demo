@@ -180,7 +180,9 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
+    <Compile Include="Auth.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="users.aspx.cs">
       <DependentUpon>users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
