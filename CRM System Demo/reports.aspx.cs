@@ -12,14 +12,14 @@ namespace CRM_System_Demo
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        HttpCookie name = Request.Cookies["name"];
-        HttpCookie sign = Request.Cookies["sign"];
-        HttpCookie time = Request.Cookies["time"];
         string date1 = null;
         string date2 = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HttpCookie name = Request.Cookies["name"];
+            HttpCookie sign = Request.Cookies["sign"];
+            HttpCookie time = Request.Cookies["time"];
+            // Auth auth = new Auth();
             if (name != null && sign != null && time != null)
             {
                 //string temp = time.Value;
@@ -31,12 +31,13 @@ namespace CRM_System_Demo
                 {
                     time.Value = DateTime.Now.ToLongTimeString();
                     time.Expires = DateTime.Now.AddMinutes(5);
-                    string tmp = time.Value.GetHashCode();
+                    string tmp = Convert.ToString(time.Value.GetHashCode());
 
                     sign.Value = Convert.ToString(tmp);
                     sign.Expires = DateTime.Now.AddMinutes(5);
                     Response.Cookies.Add(time);
                     Response.Cookies.Add(sign);
+                    Label1.Text = "You log in as " + name.Value;
 
                     Calendar1.Visible = false;
                     Calendar2.Visible = false;
@@ -182,6 +183,21 @@ namespace CRM_System_Demo
             date2 = toDate.Text;
             //problem with connection to SQL 
             //GetByDate(date1, date2);
+        }
+        protected void logOut_Click(object sender, EventArgs e)
+        {
+            HttpCookie name = Request.Cookies["name"];
+            HttpCookie sign = Request.Cookies["sign"];
+            HttpCookie time = Request.Cookies["time"];
+
+            name.Expires = DateTime.Now.AddDays(-1);
+            time.Expires = DateTime.Now.AddDays(-1);
+            sign.Expires = DateTime.Now.AddDays(-1);
+            Response.Cookies.Add(name);
+            Response.Cookies.Add(time);
+            Response.Cookies.Add(sign);
+
+            Response.Redirect("LoginPage.aspx");
         }
     }
 }

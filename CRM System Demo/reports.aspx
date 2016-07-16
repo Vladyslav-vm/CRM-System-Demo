@@ -33,10 +33,15 @@
              </div>
     </div>
          <div class="col-md-6">
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+             <asp:Button ID="logOut" runat="server" Height="31px" OnClick="logOut_Click" Text="Log out" Width="61px" />
+             <br />
+             <br /><br />
+    </div>
+        <div>
             <asp:TextBox ID="fromDate" runat="server"></asp:TextBox>
             <asp:Button ID="calend1" runat="server" Width="27px" OnClick="calend1_Click" />
           </div>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="toDate" runat="server"></asp:TextBox>
         <asp:Button ID="calen2" runat="server" Width="28px" OnClick="calen2_Click" />
         <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Confirm" OnClick="Button1_Click" />

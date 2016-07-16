@@ -45,6 +45,10 @@
       </div>
 
 
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <asp:Button ID="logOut" runat="server" Height="31px" OnClick="logOut_Click" Text="Log out" Width="61px" />
+
+
         <br />
 
 

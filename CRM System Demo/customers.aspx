@@ -33,6 +33,9 @@
 
         <div class="col-md-2">
             <asp:Button ID="report" runat="server" class="btn btn-default btn-lg btn-block" OnClick="report_Click" Text="Reports" />
+            <br />
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <asp:Button ID="logOut" runat="server" Height="31px" OnClick="logOut_Click" Text="Log out" Width="61px" />
          </div>
      </div>
         <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="#333333" GridLines="None">
