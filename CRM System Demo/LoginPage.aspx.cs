@@ -40,7 +40,7 @@ namespace CRM_System_Demo
                     //// набор символов.
                     //// Каждый раз когда от пользователя будут приходить запросы, мы будем повторно генерировать подпись и проверять,
                     //// что бы она совпадала с полученой.
-                    cookieSign.Expires = date.AddMinutes(5);
+                    cookieSign.Expires = date.AddMinutes(2);
                     Response.Cookies.Add(cookieName);
                     Response.Cookies.Add(cookieSign);
                     Response.Cookies.Add(cookieTime);

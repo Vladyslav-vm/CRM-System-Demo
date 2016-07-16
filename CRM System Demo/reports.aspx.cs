@@ -12,14 +12,45 @@ namespace CRM_System_Demo
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-
+        HttpCookie name = Request.Cookies["name"];
+        HttpCookie sign = Request.Cookies["sign"];
+        HttpCookie time = Request.Cookies["time"];
         string date1 = null;
         string date2 = null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Calendar1.Visible = false;
-            Calendar2.Visible = false;
-            //ReportViewer1.Visible = false;
+
+            if (name != null && sign != null && time != null)
+            {
+                //string temp = time.Value;
+                string tempSign = Convert.ToString(time.Value.GetHashCode());
+
+                // Если полученная подпись правильная прекращаем дальнейшую обработку события Load
+                // и переходим к следующим этапам жизненного цикла страницы.
+                if (sign.Value == tempSign)
+                {
+                    time.Value = DateTime.Now.ToLongTimeString();
+                    time.Expires = DateTime.Now.AddMinutes(5);
+                    string tmp = time.Value.GetHashCode();
+
+                    sign.Value = Convert.ToString(tmp);
+                    sign.Expires = DateTime.Now.AddMinutes(5);
+                    Response.Cookies.Add(time);
+                    Response.Cookies.Add(sign);
+
+                    Calendar1.Visible = false;
+                    Calendar2.Visible = false;
+                    //ReportViewer1.Visible = false;
+                    return;
+                }
+                else
+                {
+                    Response.Redirect("LoginPage.aspx");
+                }
+            }
+
+            Response.Redirect("LoginPage.aspx");
+            
         }
 
         protected void main_Click(object sender, EventArgs e)

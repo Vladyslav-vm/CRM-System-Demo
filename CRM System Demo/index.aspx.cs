@@ -10,22 +10,29 @@ namespace CRM_System_Demo
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
+        HttpCookie name = Request.Cookies["name"];
+        HttpCookie sign = Request.Cookies["sign"];
+        HttpCookie time = Request.Cookies["time"];
         protected void Page_Load(object sender, EventArgs e)
         {
-            Auth auth = new Auth();
-            HttpCookie name = Request.Cookies["name"];
-            HttpCookie sign = Request.Cookies["sign"];
-            HttpCookie time = Request.Cookies["time"];
-            //sign.Expires = DateTime.Now.AddMinutes(5);
-            if (name != null && sign != null)
+           // Auth auth = new Auth();
+                      if (name != null && sign != null && time !=null)
             {
-                string temp = time.Value;
+                //string temp = time.Value;
                 string tempSign = Convert.ToString(time.Value.GetHashCode());
 
                 // Если полученная подпись правильная прекращаем дальнейшую обработку события Load
                 // и переходим к следующим этапам жизненного цикла страницы.
                 if (sign.Value == tempSign)
                 {
+                    time.Value = DateTime.Now.ToLongTimeString();
+                    time.Expires = DateTime.Now.AddMinutes(5);
+                    string tmp = time.Value.GetHashCode();
+
+                    sign.Value = Convert.ToString(tmp);
+                    sign.Expires = DateTime.Now.AddMinutes(5);
+                    Response.Cookies.Add(time);
+                    Response.Cookies.Add(sign);
                     Label1.Text = "Приветствую, " + name.Value;
                     return;
                 }
