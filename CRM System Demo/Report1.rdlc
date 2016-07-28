@@ -25,7 +25,7 @@
                     <rd:DefaultName>Textbox3</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>LightGrey</Color>
+                        <Color>Black</Color>
                         <Style>Solid</Style>
                       </Border>
                       <PaddingLeft>2pt</PaddingLeft>
@@ -82,7 +82,7 @@
                       </ActionInfo>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -113,7 +113,7 @@
                       <rd:DefaultName>operation_price</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -148,7 +148,7 @@
                       <rd:DefaultName>Textbox23</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -178,7 +178,7 @@
                       <rd:DefaultName>Textbox24</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>LightGrey</Color>
+                          <Color>Black</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -226,7 +226,7 @@
                     <rd:DefaultName>Textbox19</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>LightGrey</Color>
+                        <Color>Black</Color>
                         <Style>Solid</Style>
                       </Border>
                       <PaddingLeft>2pt</PaddingLeft>
@@ -262,7 +262,7 @@
                     <rd:DefaultName>Textbox20</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>LightGrey</Color>
+                        <Color>Black</Color>
                         <Style>Solid</Style>
                       </Border>
                       <PaddingLeft>2pt</PaddingLeft>
@@ -309,7 +309,7 @@
                     <rd:DefaultName>id</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>LightGrey</Color>
+                        <Color>Black</Color>
                         <Style>Solid</Style>
                       </Border>
                       <PaddingLeft>2pt</PaddingLeft>
@@ -345,7 +345,7 @@
                     <rd:DefaultName>Textbox5</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>LightGrey</Color>
+                        <Color>Black</Color>
                         <Style>Solid</Style>
                       </Border>
                       <PaddingLeft>2pt</PaddingLeft>
@@ -451,6 +451,7 @@
         <DataSourceName>CRMBaseDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
+      
       <Fields>
         <Field Name="id">
           <DataField>id</DataField>

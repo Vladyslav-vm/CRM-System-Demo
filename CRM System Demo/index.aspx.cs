@@ -33,7 +33,7 @@ namespace CRM_System_Demo
                     sign.Expires = DateTime.Now.AddMinutes(5);
                     Response.Cookies.Add(time);
                     Response.Cookies.Add(sign);
-                    Label1.Text = "You log in as " + name.Value;
+                    Label1.Text = "You logged in as " + name.Value;
                     return;
                 }
                 else
