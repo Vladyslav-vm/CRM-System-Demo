@@ -8,24 +8,23 @@
             <TablixCornerRow>
               <TablixCornerCell>
                 <CellContents>
-                  <Textbox Name="Textbox3">
+                  <Textbox Name="Textbox21">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Invoice number</Value>
+                            <Value>Invoice date</Value>
                             <Style />
                           </TextRun>
                         </TextRuns>
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox3</rd:DefaultName>
+                    <rd:DefaultName>Textbox19</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>Black</Color>
                         <Style>Solid</Style>
                       </Border>
                       <PaddingLeft>2pt</PaddingLeft>
@@ -42,7 +41,7 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.76118cm</Width>
+              <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.76118cm</Width>
@@ -54,35 +53,23 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="operation_date">
+                    <Textbox Name="operation_type">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!operation_date.Value</Value>
-                              <Style>
-                                <Format>dd.MM.yyyy</Format>
-                              </Style>
+                              <Value>=Fields!operation_type.Value</Value>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>operation_date</rd:DefaultName>
-                      <ActionInfo>
-                        <Actions>
-                          <Action>
-                            <Drillthrough>
-                              <ReportName>CDate(Fields!operation_date.Value)</ReportName>
-                            </Drillthrough>
-                          </Action>
-                        </Actions>
-                      </ActionInfo>
+                      <rd:DefaultName>operation_type</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Black</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -91,7 +78,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -113,7 +99,6 @@
                       <rd:DefaultName>operation_price</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Black</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -131,7 +116,7 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox23">
+                    <Textbox Name="Textbox6">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -145,10 +130,9 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox23</rd:DefaultName>
+                      <rd:DefaultName>Textbox6</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Black</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -178,7 +162,6 @@
                       <rd:DefaultName>Textbox24</rd:DefaultName>
                       <Style>
                         <Border>
-                          <Color>Black</Color>
                           <Style>Solid</Style>
                         </Border>
                         <PaddingLeft>2pt</PaddingLeft>
@@ -196,37 +179,35 @@
         <TablixColumnHierarchy>
           <TablixMembers>
             <TablixMember>
-              <Group Name="operation_date">
-                <GroupExpressions>
-                  <GroupExpression>=Fields!operation_date.Value</GroupExpression>
-                </GroupExpressions>
-              </Group>
-              <SortExpressions>
-                <SortExpression>
-                  <Value>=Fields!operation_date.Value</Value>
-                </SortExpression>
-              </SortExpressions>
               <TablixHeader>
                 <Size>1.31438cm</Size>
                 <CellContents>
-                  <Textbox Name="Textbox19">
+                  <Textbox Name="Textbox3">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>Invoice date</Value>
+                            <Value>Type</Value>
+                            <Style />
+                          </TextRun>
+                        </TextRuns>
+                        <Style />
+                      </Paragraph>
+                      <Paragraph>
+                        <TextRuns>
+                          <TextRun>
+                            <Value />
                             <Style />
                           </TextRun>
                         </TextRuns>
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>Textbox19</rd:DefaultName>
+                    <rd:DefaultName>Textbox3</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>Black</Color>
                         <Style>Solid</Style>
                       </Border>
                       <PaddingLeft>2pt</PaddingLeft>
@@ -237,9 +218,6 @@
                   </Textbox>
                 </CellContents>
               </TablixHeader>
-              <TablixMembers>
-                <TablixMember />
-              </TablixMembers>
             </TablixMember>
             <TablixMember>
               <TablixHeader>
@@ -262,7 +240,6 @@
                     <rd:DefaultName>Textbox20</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>Black</Color>
                         <Style>Solid</Style>
                       </Border>
                       <PaddingLeft>2pt</PaddingLeft>
@@ -281,7 +258,7 @@
             <TablixMember>
               <Group Name="id">
                 <GroupExpressions>
-                  <GroupExpression>=Fields!id.Value</GroupExpression>
+                  <GroupExpression>=Fields!operation_date.Value</GroupExpression>
                 </GroupExpressions>
               </Group>
               <SortExpressions>
@@ -292,24 +269,34 @@
               <TablixHeader>
                 <Size>3.76118cm</Size>
                 <CellContents>
-                  <Textbox Name="id">
+                  <Textbox Name="operation_date2">
                     <CanGrow>true</CanGrow>
                     <KeepTogether>true</KeepTogether>
                     <Paragraphs>
                       <Paragraph>
                         <TextRuns>
                           <TextRun>
-                            <Value>=Fields!id.Value</Value>
-                            <Style />
+                            <Value>=Fields!operation_date.Value</Value>
+                            <Style>
+                              <Format>dd.MM.yyyy</Format>
+                            </Style>
                           </TextRun>
                         </TextRuns>
                         <Style />
                       </Paragraph>
                     </Paragraphs>
-                    <rd:DefaultName>id</rd:DefaultName>
+                    <rd:DefaultName>operation_date</rd:DefaultName>
+                    <ActionInfo>
+                      <Actions>
+                        <Action>
+                          <Drillthrough>
+                            <ReportName>CDate(Fields!operation_date.Value)</ReportName>
+                          </Drillthrough>
+                        </Action>
+                      </Actions>
+                    </ActionInfo>
                     <Style>
                       <Border>
-                        <Color>Black</Color>
                         <Style>Solid</Style>
                       </Border>
                       <PaddingLeft>2pt</PaddingLeft>
@@ -345,7 +332,6 @@
                     <rd:DefaultName>Textbox5</rd:DefaultName>
                     <Style>
                       <Border>
-                        <Color>Black</Color>
                         <Style>Solid</Style>
                       </Border>
                       <PaddingLeft>2pt</PaddingLeft>
@@ -360,11 +346,18 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
+        <RepeatColumnHeaders>true</RepeatColumnHeaders>
+        <FixedColumnHeaders>true</FixedColumnHeaders>
         <DataSetName>DataSet1</DataSetName>
+        <SortExpressions>
+          <SortExpression>
+            <Value>=Fields!operation_date.Value</Value>
+          </SortExpression>
+        </SortExpressions>
         <Top>6.05812cm</Top>
         <Left>11.2325cm</Left>
         <Height>3.94314cm</Height>
-        <Width>11.28354cm</Width>
+        <Width>10.02236cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -451,7 +444,6 @@
         <DataSourceName>CRMBaseDataSet</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
-      
       <Fields>
         <Field Name="id">
           <DataField>id</DataField>
