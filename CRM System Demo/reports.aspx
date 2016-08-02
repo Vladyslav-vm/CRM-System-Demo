@@ -7,14 +7,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.0.0.min.js"></script>
     <script src="Scripts/bootstrap.min.js"></script>
 </head>
     <style>
 
 body {
-    background-color: #D1D0CE;
+    background-color: #E5E4E2;
 }
 
   	.container {			
@@ -24,14 +24,15 @@ body {
 
 
 
-         .navbar-default {
-    background-color: #E5E4E2;
+         .navbar-inverse {
     border-color: #2C3539;
-         border-radius: 10px;
+         
 }
 .navbar-default .navbar-brand {
-    color: #000000;
+    color: #FFFFFF;
 }
+
+
 
 footer {
     height: 100px;
@@ -50,62 +51,47 @@ footer {
         <br />
                      
                      <p align="right">  
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                    <asp:Button ID="logOut" runat="server" BackColor="white" class="btn btn-default" Text="Log Out" OnClick="logOut_Click"  BorderColor="Black" BorderStyle="Solid" />
+                    <strong>   <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label> </strong>
                          </p>
             
 
         <br />
 
-<nav class="navbar navbar-default">
-  
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand">
-          <h3>CRM System</h3>
-
-      </a>
+      <a class="navbar-brand" href="#">CRM System</a>
     </div>
     <ul class="nav navbar-nav">
-
-
-
-        <li><a href="#">
-            <asp:Button ID="main" runat="server" class="btn btn-default btn-lg" Text="Home" OnClick="main_Click" />
-            </a></li>
-
-        <li><a href="#">
-            <asp:Button ID="user" runat="server" class="btn btn-default btn-lg" Text="Users" OnClick="user_Click" />
-            </a></li>
-        <li><a href="#">
-            <asp:Button ID="product" runat="server" class="btn btn-default btn-lg" Text="Products" OnClick="product_Click" />
-            </a></li>
-         <li><a href="#">
-            <asp:Button ID="customer" runat="server" class="btn btn-default btn-lg" Text="Customers" OnClick="customer_Click" />
-            </a></li>
-
-        <li><a href="#">
-            <asp:Button ID="contract" runat="server" class="btn btn-default btn-lg" Text="Contracts" OnClick="contract_Click" />
-            </a></li>
-
-        <li class="active"><a href="#">
-            <asp:Button ID="report" runat="server" class="btn btn-success btn-lg" OnClick="report_Click" Text="Reports" />
-            </a></li> 
-
-
+      <li><a href="index.aspx">Home</a></li>
+      <li><a href="users.aspx">Users</a></li>
+      <li><a href="products.aspx">Products</a></li>
+      <li><a href="customers.aspx">Customers</a></li>
+       <li><a href="contracts.aspx">Contracts</a></li>
+       <li class="active"><a href="reports.aspx">Reports</a></li>
+         
     </ul>
-       
-      </nav>
+    <ul class="nav navbar-nav navbar-right">
+      
+          
+      <li><a href="LoginPage.aspx"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+    </ul>
+  </div>
+</nav>
 
 
- </div>
+
+<br /><br />
+
+ 
         <br />
 
 
             <asp:TextBox ID="fromDate" runat="server"></asp:TextBox>
-            <asp:Button ID="calend1" runat="server" Width="27px" OnClick="calend1_Click" />
+            <asp:Button ID="calend1" runat="server" OnClick="calend1_Click" CssClass="btn-primary" Text="Submit" Width="70px" />
         <asp:TextBox ID="toDate" runat="server"></asp:TextBox>
-        <asp:Button ID="calen2" runat="server" Width="28px" OnClick="calen2_Click" />
-        <asp:Button ID="Button1" runat="server" class="btn btn-primary" Text="Confirm" OnClick="Button1_Click" />
+        <asp:Button ID="calen2" runat="server" OnClick="calen2_Click" CssClass="btn-primary" Text="Submit" Width="70px"/>
+        
         <div>
         <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#3366CC" CellPadding="1" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#003399" Height="200px" OnSelectionChanged="Calendar1_SelectionChanged" Width="220px" BorderWidth="1px">
             <DayHeaderStyle BackColor="#99CCCC" ForeColor="#336666" Height="1px" />
@@ -159,5 +145,13 @@ footer {
             </UpdateParameters>
         </asp:ObjectDataSource>
     </form>
+
+        <footer>
+	
+            <img src="LogoMakr.png" alt="deleted" title="company logo" align="right" width="250"/>
+	
+</footer>
+        </div>
+
 </body>
 </html>

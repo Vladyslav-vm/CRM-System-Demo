@@ -12,7 +12,7 @@
 <style>
 
 body {
-    background-color: #D1D0CE;
+    background-color: #E5E4E2;
 }
 
   	.container {			
@@ -22,14 +22,20 @@ body {
 
 
 
-         .navbar-default {
-    background-color: #E5E4E2;
+         .navbar-inverse {
     border-color: #2C3539;
-         border-radius: 10px;
+         
 }
 .navbar-default .navbar-brand {
-    color: #000000;
+    color: #FFFFFF;
 }
+
+table, .table {
+        
+            width: 700px;
+            margin: 20px auto;
+            background-color: #FEFCFF;
+        }
 
 footer {
     height: 100px;
@@ -48,80 +54,57 @@ footer {
         <br />
                      
                      <p align="right">  
-                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                    <asp:Button ID="Button1" runat="server" BackColor="white" class="btn btn-default" Text="Log Out" OnClick="logOut_Click"  BorderColor="Black" BorderStyle="Solid" />
+                    <strong>   <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label> </strong>
+                   
                          </p>
             
 
         <br />
 
-<nav class="navbar navbar-default">
-  
+        <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand">
-          <h3>CRM System</h3>
-
-      </a>
+      <a class="navbar-brand" href="#">CRM System</a>
     </div>
     <ul class="nav navbar-nav">
-
-        <li><a href="#">
-                <asp:Button ID="main" runat="server" class="btn btn-default btn-lg" Text="Home" OnClick="main_Click" />
-         </a></li>
-
-        <li><a href="#">
-
-            <asp:Button ID="user" runat="server" class="btn btn-default btn-lg" Text="Users" OnClick="user_Click" />
-          </a></li>
-
-        <li><a href="#">
-            <asp:Button ID="product" runat="server" class="btn btn-default btn-lg" Text="Products" OnClick="product_Click" />
-            </a></li>
-
-
-         <li class="active"><a href="#">
-            <asp:Button ID="customer" runat="server" class="btn btn-success btn-lg" Text="Customers" OnClick="customer_Click" />
-         </a></li>
-
-         <li><a href="#">
-            <asp:Button ID="contract" runat="server" class="btn btn-default btn-lg" Text="Contracts" OnClick="contract_Click" />
-        </a></li>
-        
-         <li><a href="#">
-
-            <asp:Button ID="report" runat="server" class="btn btn-default btn-lg" OnClick="report_Click" Text="Reports" />
-             </a></li>
-
-             
-                </ul>
-       
-            </nav>
+      <li><a href="index.aspx">Home</a></></li>
+      <li><a href="users.aspx">Users</a></></li>
+      <li><a href="products.aspx">Products</a></li>
+      <li class="active"><a href="customers.aspx">Customers</a></li>
+       <li><a href="contracts.aspx">Contracts</a></li>
+       <li><a href="reports.aspx">Reports</a></li>
+         
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      
+          
+      <li><a href="LoginPage.aspx"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+    </ul>
+  </div>
+</nav>
 
 
-        </div>
+
+
+
+
+      
         <br />
 
         
           <center>
               
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" CellPadding="3" DataKeyNames="id" DataSourceID="SqlDataSource1" ForeColor="Black" GridLines="Vertical" Width="445px" BackColor="White" BorderColor="#000000" BorderStyle="Solid" BorderWidth="2px">
-            <AlternatingRowStyle BackColor="#CCCCCC" />
+        <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="id" CssClass="table-hover" >
+           
             <Columns>
                 <asp:BoundField DataField="id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                 <asp:BoundField DataField="company" HeaderText="Company" SortExpression="company" />
                 <asp:BoundField DataField="edrpou" HeaderText="EDRPOU" SortExpression="edrpou" />
-                <asp:CommandField ButtonType="Button" ShowSelectButton="True" CancelText="Cancel" DeleteText="Delete" EditText="Edit" InsertText="Insert" NewText="Create" SelectText="Select" UpdateText="Update" >
-                <ControlStyle CssClass="btn btn-primary" />
+                <asp:CommandField ButtonType="Button" ShowSelectButton="True" CancelText="Cancel" DeleteText="Delete" EditText="Edit" InsertText="Insert" NewText="Create" SelectText="Select" UpdateText="Update" ControlStyle-CssClass="btn-primary" ItemStyle-Width="38px">
+                
                 </asp:CommandField>
             </Columns>
-            <FooterStyle BackColor="#CCCCCC" />
-            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
-            <SelectedRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
-            <SortedAscendingCellStyle BackColor="#F1F1F1" />
-            <SortedAscendingHeaderStyle BackColor="#808080" />
-            <SortedDescendingCellStyle BackColor="#CAC9C9" />
-            <SortedDescendingHeaderStyle BackColor="#383838" />
+           
         </asp:GridView>
               
               <br />
@@ -129,9 +112,8 @@ footer {
 
              
 
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="3" DataKeyNames="id" DataSourceID="SqlDataSource2" ForeColor="Black" GridLines="Vertical" Height="50px" Width="327px" OnItemDeleted="DetailsView1_ItemDeleted" OnItemInserted="DetailsView1_ItemInserted" OnItemUpdated="DetailsView1_ItemUpdated" BackColor="White" BorderColor="#000000" BorderStyle="Solid" BorderWidth="2px">
-            <AlternatingRowStyle BackColor="#CCCCCC" />
-            <EditRowStyle BackColor="#000099" Font-Bold="True" ForeColor="White" />
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="3" DataKeyNames="id" DataSourceID="SqlDataSource2" CssClass="table-hover">
+            
             <Fields>
                 <asp:BoundField DataField="id" HeaderText="Id" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                 <asp:BoundField DataField="company" HeaderText="Company" SortExpression="company" />
@@ -139,13 +121,11 @@ footer {
                 <asp:BoundField DataField="phonenumber" HeaderText="Phone number" SortExpression="phonenumber" />
                 <asp:BoundField DataField="edrpou" HeaderText="EDRPOU" SortExpression="edrpou" />
                 <asp:BoundField DataField="inn" HeaderText="INN" SortExpression="inn" />
-                <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" CancelText="Cancel" DeleteText="Delete" EditText="Edit" InsertText="Insert" NewText="Create" SelectText="Select" UpdateText="Update" >
-                <ControlStyle CssClass="btn btn-primary" />
+                <asp:CommandField ButtonType="Button" ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" CancelText="Cancel" DeleteText="Delete" EditText="Edit" InsertText="Insert" NewText="Create" SelectText="Select" UpdateText="Update" ControlStyle-CssClass="btn-group btn btn-primary">
+               
                 </asp:CommandField>
             </Fields>
-            <FooterStyle BackColor="#CCCCCC" />
-            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#999999" ForeColor="Black" HorizontalAlign="Center" />
+            
         </asp:DetailsView>
 
               
@@ -188,6 +168,6 @@ footer {
             <img src="LogoMakr.png" alt="deleted" title="company logo" align="right" width="250"/>
 	
 </footer>
-
+      </div>
 </body>
 </html>

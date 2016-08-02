@@ -15,25 +15,25 @@
     <style>
 
 
-
+        body {
+    background-color: #FEFCFF;
+}
         .page-header {
 
         background-color: #f4511e;
     color: #fff;
     padding: 50px 25px;
         
-         border-radius: 10px
+         
         }
 
-        form {
+         form {
        
-            width: 300px;
+            width: 500px;
             margin: 100px auto;
-            border: 2px black;
+            border: 1px solid grey;
             padding: 20px;
-        background-color: #f4511e;
-             color: #fff;
-        border-radius: 10px
+            
         }
 
        
@@ -45,7 +45,7 @@
   	font-size: 11px;
        padding: 25px 0;
         height: 100px;
-         border-radius: 10px;
+         
 
 position: [I]justfily[/I];
 bottom: 1em;
@@ -63,7 +63,7 @@ text-align: right;
 
     </style>
 </head>
-<body background="background2.png">
+<body>
 
     <div class="container-fluid">
 
@@ -74,32 +74,45 @@ text-align: right;
         <h3 align="center">Thank You for using our Software</h3>
     </header>
   
-        <form id="form1" runat="server">
-            <div class="form-group rounded">
+       
+        
+
+        <form id="form1" runat="server" CssClass="form-group">
+            <fieldset>
+            
     
-        <h5 align="left">If you have already registered at CRM System then sign in here</h5>
-         </div>
-         <div class="form-group" align="left">
-            <asp:Label for="TextBox1" runat="server">Username</asp:Label>
+        <legend>If you have already registered at CRM System then sign in here</legend>
+         
+         <div class="form-group">
+            <asp:Label for="TextBox1" runat="server" class="control-label">Username</asp:Label>
+             
 &nbsp;<asp:TextBox ID="TextBox1" runat="server" input type="username" class="form-control" placeholder="Enter username"></asp:TextBox>
-            </div>
-        <div class="form-group" align="left">
-        <asp:Label for="TextBox2" runat="server">Password</asp:Label>
+            
+        </div>
+        <div class="form-group">
+        <asp:Label for="TextBox2" runat="server" class="control-label">Password</asp:Label>
+        
 &nbsp;<asp:TextBox ID="TextBox2" runat="server" input type="password" class="form-control" placeholder="Enter password"></asp:TextBox>
             </div>
+          
          <div class="form-group">
-         <asp:Button ID="Button1" runat="server" type="submit" class="btn btn-default" Text="Sign in" OnClick="Button1_Click"/>
+            
+         <asp:Button ID="Button1" runat="server" type="submit" class="btn btn-primary" Text="Sign in" OnClick="Button1_Click"/>
          <asp:Label for="Button1" runat="server" ID="Label3"></asp:Label>
             </div>
+            
+
+
+         </fieldset>
+        </form>
+   
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:CRMBaseConnectionString %>" SelectCommand="SELECT [name_and_surname] FROM [_user] WHERE (([login] = @login) AND ([password] = @password))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="TextBox1" Name="login" PropertyName="Text" Type="String" />
                 <asp:ControlParameter ControlID="TextBox2" Name="password" PropertyName="Text" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        </form>
-
-   
+               
 
 
 
@@ -123,8 +136,8 @@ We are dynamically developing software company. Our mission is to make dreams co
 		
 </footer>
 
+   
     </div>
-
 </html>
         
 
