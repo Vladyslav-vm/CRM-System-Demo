@@ -115,7 +115,7 @@ footer {
         </asp:Calendar>
             </div>
         <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
-        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" SizeToReportContent="True" OnDrillthrough="ReportViewer1_Drillthrough">
+        <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" Font-Size="8pt" WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" SizeToReportContent="True" OnDrillthrough="ReportViewer1_Drillthrough" BackColor="White" DocumentMapWidth="100%" Height="20px" Width="570px">
             <LocalReport ReportPath="Report1.rdlc">
                 <DataSources>
                     <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
